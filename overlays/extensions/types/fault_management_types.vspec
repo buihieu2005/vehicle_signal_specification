@@ -1,0 +1,31 @@
+#
+# Types used by the fault management overlay.
+#
+Types:
+  type: branch
+  description: Root branch for custom complex data types.
+
+Types.FaultManagement:
+  type: branch
+  description: Types used by fault management signals.
+
+Types.FaultManagement.FaultRecord:
+  type: struct
+  description: One stored fault entry.
+
+Types.FaultManagement.FaultRecord.FaultId:
+  type: property
+  datatype: string
+  description: Fault identifier reported by the source unit or ECU.
+
+Types.FaultManagement.FaultRecord.Status:
+  type: property
+  datatype: uint8
+  min: 0
+  max: 255
+  description: Standard automotive fault status byte represented as an 8-bit bitfield.
+
+Types.FaultManagement.FaultRecord.Timestamp:
+  type: property
+  datatype: string
+  description: Latest update time of the fault status, formatted according to ISO 8601 with UTC time zone.

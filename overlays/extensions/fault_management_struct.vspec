@@ -1,0 +1,24 @@
+#
+# Example overlay to add vehicle-wide fault management signals using a struct
+# array. This models each fault as one logical record, but requires VSS tool
+# support for struct types.
+#
+# Dependencies to other overlays: overlays/extensions/types/fault_management_types.vspec
+# Known conflicts with other overlays: None
+#
+Vehicle:
+  type: branch
+
+Vehicle.FaultManagement:
+  type: branch
+  description: Vehicle-wide fault management information.
+
+Vehicle.FaultManagement.ActiveFaultCount:
+  type: sensor
+  datatype: uint16
+  description: Number of currently stored active faults.
+
+Vehicle.FaultManagement.FaultList:
+  type: sensor
+  datatype: Types.FaultManagement.FaultRecord[]
+  description: List of faults currently stored by the vehicle fault management system.
