@@ -1,0 +1,36 @@
+#
+# Example overlay to add vehicle-wide fault management signals using only
+# primitive arrays for broad VSS tool compatibility.
+#
+# Dependencies to other overlays: None
+# Known conflicts with other overlays: None
+#
+Vehicle:
+  type: branch
+
+Vehicle.FaultManagement:
+  type: branch
+  description: Vehicle-wide fault management information.
+
+Vehicle.FaultManagement.ActiveFaultCount:
+  type: sensor
+  datatype: uint16
+  description: Number of currently stored active faults.
+
+Vehicle.FaultManagement.FaultIdList:
+  type: sensor
+  datatype: string[]
+  description: List of stored fault identifiers reported by source units or ECUs.
+  comment: Array indexes align with FaultStatusList and FaultTimestampList.
+
+Vehicle.FaultManagement.FaultStatusList:
+  type: sensor
+  datatype: uint8[]
+  description: List of stored automotive fault status bytes represented as 8-bit bitfields.
+  comment: Array indexes align with FaultIdList and FaultTimestampList.
+
+Vehicle.FaultManagement.FaultTimestampList:
+  type: sensor
+  datatype: string[]
+  description: List of latest fault status update times, formatted according to ISO 8601 with UTC time zone.
+  comment: Array indexes align with FaultIdList and FaultStatusList.
