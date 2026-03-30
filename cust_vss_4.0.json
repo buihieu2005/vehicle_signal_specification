@@ -5558,35 +5558,6 @@
                 "description": "Information about exterior measured by vehicle.",
                 "type": "branch"
             },
-            "FaultManagement": {
-                "children": {
-                    "ActiveFaultCount": {
-                        "datatype": "uint16",
-                        "description": "Number of currently stored active faults.",
-                        "type": "sensor"
-                    },
-                    "FaultIdList": {
-                        "comment": "Array indexes align with FaultStatusList and FaultTimestampList.",
-                        "datatype": "string[]",
-                        "description": "List of stored fault identifiers reported by source units or ECUs.",
-                        "type": "sensor"
-                    },
-                    "FaultStatusList": {
-                        "comment": "Array indexes align with FaultIdList and FaultTimestampList.",
-                        "datatype": "uint8[]",
-                        "description": "List of stored automotive fault status bytes represented as 8-bit bitfields.",
-                        "type": "sensor"
-                    },
-                    "FaultTimestampList": {
-                        "comment": "Array indexes align with FaultIdList and FaultStatusList.",
-                        "datatype": "string[]",
-                        "description": "List of latest fault status update times, formatted according to ISO 8601 with UTC time zone.",
-                        "type": "sensor"
-                    }
-                },
-                "description": "Vehicle-wide fault management information.",
-                "type": "branch"
-            },
             "GrossWeight": {
                 "datatype": "uint16",
                 "default": 0,
